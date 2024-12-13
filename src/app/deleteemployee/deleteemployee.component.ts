@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-deleteemployee',
   imports: [],
   templateUrl: './deleteemployee.component.html',
+  standalone: true,
   styleUrl: './deleteemployee.component.css'
 })
 export class DeleteemployeeComponent {
