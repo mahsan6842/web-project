@@ -1,46 +1,13 @@
-
-
-
 <div class="container">
   <h1>Employee Management</h1>
 
 
     <ul>
       <li><a  routerLink="/addemployee" routerLinkActive="active">Add Employee</a></li>
-      <li><a href="#editEmployee">Edit Employee</a></li>
-      <li><a href="#deleteEmployee">Delete Employee</a></li>
-      <li><a href="#viewEmployees">View Employees</a></li>
+      <li><a routerLink="/editemployee" routerLinkActive="active">Edit Employee</a></li>
+      <li><a routerLink="/deleteemployee" routerLinkActive="active">Delete Employee</a></li>
+      <li><a routerLink="/viewemployee" routerLinkActive="active">View Employees</a></li>
     </ul>
-
-
-
-
-  <section id="deleteEmployee">
-    <h2>Delete Employee</h2>
-    <form>
-      <label for="deleteEmployeeId">Employee ID:</label>
-      <input type="text" id="deleteEmployeeId" name="deleteEmployeeId" required>
-
-      <button type="submit">Delete</button>
-    </form>
-  </section>
-
-  <section id="viewEmployees">
-    <h2>View Employees</h2>
-    <table>
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Position</th>
-      </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
-  </section>
 
 </div>
 <router-outlet></router-outlet>
