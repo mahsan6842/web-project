@@ -1,0 +1,9 @@
+footer {
+  flex-shrink: 0; /* Prevents the footer from shrinking */
+  background-color: #333;
+  color: white;
+  margin-top: 350px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%; /* Ensures footer spans the full width of the viewport */
+}
