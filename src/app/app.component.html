@@ -1,13 +1,30 @@
+<app-header></app-header>
+
 <div class="container">
   <h1>Employee Management</h1>
 
+  <ul>
+    <!-- Show these links only if the user is logged in -->
+    <li *ngIf="loginService.isLoggedIn()">
+      <a routerLink="/addemployee" routerLinkActive="active">Add Employee</a>
+    </li>
+    <li *ngIf="loginService.isLoggedIn()">
+      <a routerLink="/editemployee" routerLinkActive="active">Edit Employee</a>
+    </li>
+    <li *ngIf="loginService.isLoggedIn()">
+      <a routerLink="/deleteemployee" routerLinkActive="active">Delete Employee</a>
+    </li>
+    <li *ngIf="loginService.isLoggedIn()">
+      <a routerLink="/viewemployee" routerLinkActive="active">View Employees</a>
+    </li>
 
-    <ul>
-      <li><a  routerLink="/addemployee" routerLinkActive="active">Add Employee</a></li>
-      <li><a routerLink="/editemployee" routerLinkActive="active">Edit Employee</a></li>
-      <li><a routerLink="/deleteemployee" routerLinkActive="active">Delete Employee</a></li>
-      <li><a routerLink="/viewemployee" routerLinkActive="active">View Employees</a></li>
-    </ul>
-
+    <!-- Always show the login link -->
+    <li *ngIf="!loginService.isLoggedIn()">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </li>
+  </ul>
 </div>
+
 <router-outlet></router-outlet>
+
+<app-footer></app-footer>

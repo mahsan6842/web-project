@@ -1,0 +1,12 @@
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+header nav a {
+  color: white;
+  padding: 0 15px;
+  text-decoration: none;
+}
