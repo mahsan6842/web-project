@@ -6,7 +6,7 @@
   <h1>Employee Management</h1>
 
   <ul>
-    <!-- Show these links only if the user is logged in -->
+    
     <li *ngIf="loginService.isLoggedIn()">
       <a routerLink="/addemployee" routerLinkActive="active">Add Employee</a>
     </li>

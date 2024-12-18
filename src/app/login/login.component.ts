@@ -33,13 +33,11 @@ export class LoginComponent {
         // If login is successful, authenticate the user
         this.loginService.authenticate();
         alert('Login successful!');
-
-        // Navigate to the dashboard after successful login
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.error('Error during login:', err);
-        // If there's an error, show an error alert
+
         alert('Invalid credentials or something went wrong!');
       }
     });

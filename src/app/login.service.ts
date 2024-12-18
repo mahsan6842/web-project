@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'http://localhost:3000/api/admin/login'; // API endpoint
-  private isAuthenticated = false;  // Track the authentication state
+  private apiUrl = 'http://localhost:3000/api/admin/login';
+  private isAuthenticated = false;
 
   constructor(private http: HttpClient) {}
 
-  // Check if the user is logged in
+
   isLoggedIn(): boolean {
     return this.isAuthenticated;
   }

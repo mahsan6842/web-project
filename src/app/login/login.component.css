@@ -1,45 +1,44 @@
-/* Center the login form vertically and horizontally */
 body, html {
-  height: 100%; /* Ensure the page takes full height */
-  margin: 0; /* Remove default margin */
+  height: 100%;
+  margin: 0;
 }
 
 .login-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100%; /* Full page height */
-  background-color: #f8f9fa; /* Light background for contrast */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f8f9fa;
 }
 
-/* Basic styling for the login form */
+
 .login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 400px; /* Maximum width of the form */
+  max-width: 400px;
   padding: 20px;
-  background-color: white; /* White background for the form */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Rounded corners */
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-/* Styling for input fields */
+
 input {
   padding: 10px;
   margin: 10px 0;
-  border: 2px solid #ccc; /* Default border color */
-  border-radius: 4px; /* Rounded corners for input fields */
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-/* Highlight input fields with errors */
+
 input.error {
-  border-color: #ff3860; /* Bright red border for error fields */
+  border-color: #ff3860;
 }
 
-/* Button styling */
+
 button {
-  background-color: #0056b3; /* A nice blue background */
+  background-color: #0056b3;
   color: white;
   padding: 10px;
   border: none;
@@ -49,17 +48,16 @@ button {
 }
 
 button:hover {
-  background-color: #003d7a; /* Darker blue on hover */
+  background-color: #003d7a;
 }
 
-/* Error message styling */
 .error-message {
-  color: #ff3860; /* Red text for errors */
-  font-size: 0.9em; /* Smaller font size for error messages */
-  margin: 5px 0 15px 0; /* Space around error messages */
+  color: #ff3860;
+  font-size: 0.9em;
+  margin: 5px 0 15px 0;
 }
 
-/* Styling labels for better readability */
+
 label {
   font-weight: bold;
   margin-top: 10px;
