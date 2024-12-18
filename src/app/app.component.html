@@ -1,4 +1,6 @@
+<li *ngIf="loginService.isLoggedIn()">
 <app-header></app-header>
+</li>
 
 <div class="container">
   <h1>Employee Management</h1>
@@ -26,5 +28,7 @@
 </div>
 
 <router-outlet></router-outlet>
-
+<li *ngIf="loginService.isLoggedIn()">
 <app-footer></app-footer>
+</li>
+
