@@ -3,6 +3,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
+const connectDB=require('./utils/db');
+
+
 const PORT = 3000;
 
 // Middleware
@@ -23,7 +26,7 @@ app.post('/api/admin/login', (req, res) => {
     }
 });
 
-// Start the server
+connectDB();
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
