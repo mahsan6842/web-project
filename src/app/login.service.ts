@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'http://localhost:3000/api/admin/login';
+  private apiUrl = 'http://localhost:3000/account';
+  private hi = 'http://localhost:3000/employees';
   private isAuthenticated = false;
 
   constructor(private http: HttpClient) {}
@@ -16,18 +17,28 @@ export class LoginService {
     return this.isAuthenticated;
   }
 
-  // Login method to send username and password
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(this.apiUrl, { username, password });
-  }
-
-  // Method to set the login state to authenticated
-  authenticate() {
+  loggin(){
     this.isAuthenticated = true;
   }
 
-  // Method to logout and reset the authentication state
-  logout() {
-    this.isAuthenticated = false;
+  senddata(data: any) {
+    return this.http.post<any>(this.hi,data);
+  }
+
+  getAccounts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+  getemployees(): Observable<any[]> {
+    return this.http.get<any[]>(this.hi);
+  }
+  getid(id:any)
+  {
+    return this.http.get(`http://localhost:3000/employees/${id}`);
+  }
+  deleteEmployee(id :any ) {
+    return this.http.delete<any>(`http://localhost:3000/employees/${id}`);
+  }
+  updatedata(id :any , data: any) {
+    return this.http.put<any>(`http://localhost:3000/employees/${id}`,data);
   }
 }

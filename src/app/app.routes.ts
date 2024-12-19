@@ -9,7 +9,7 @@ import { AuthGuardService } from './auth/auth-guard.service';  // Import the Aut
 export const routes: Routes = [
   { path: 'addemployee', component: AddemployeeComponent, canActivate: [AuthGuardService] },
   { path: 'deleteemployee', component: DeleteemployeeComponent, canActivate: [AuthGuardService] },
-  { path: 'editemployee', component: EditemployeeComponent, canActivate: [AuthGuardService] },
+  { path: 'editemployee/:id', component: EditemployeeComponent, canActivate: [AuthGuardService] },
   { path: 'viewemployee', component: ViewemployeeComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
 ];

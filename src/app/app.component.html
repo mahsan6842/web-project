@@ -1,34 +1,33 @@
-<li *ngIf="loginService.isLoggedIn()">
-<app-header></app-header>
-</li>
+<div *ngIf="loginService.isLoggedIn()">
+  <app-header></app-header>
+</div>
 
 <div class="container">
   <h1>Employee Management</h1>
 
-  <ul>
-    
-    <li *ngIf="loginService.isLoggedIn()">
-      <a routerLink="/addemployee" routerLinkActive="active">Add Employee</a>
-    </li>
-    <li *ngIf="loginService.isLoggedIn()">
-      <a routerLink="/editemployee" routerLinkActive="active">Edit Employee</a>
-    </li>
-    <li *ngIf="loginService.isLoggedIn()">
-      <a routerLink="/deleteemployee" routerLinkActive="active">Delete Employee</a>
-    </li>
-    <li *ngIf="loginService.isLoggedIn()">
-      <a routerLink="/viewemployee" routerLinkActive="active">View Employees</a>
-    </li>
+  <div class="menu">
+    <button *ngIf="loginService.isLoggedIn()" routerLink="/addemployee" routerLinkActive="active">
+      Add Employee
+    </button>
+    <button *ngIf="loginService.isLoggedIn()" routerLink="/editemployee" routerLinkActive="active">
+      Edit Employee
+    </button>
+    <button *ngIf="loginService.isLoggedIn()" routerLink="/deleteemployee" routerLinkActive="active">
+      Delete Employee
+    </button>
+    <button *ngIf="loginService.isLoggedIn()" routerLink="/viewemployee" routerLinkActive="active">
+      View Employees
+    </button>
 
     <!-- Always show the login link -->
-    <li *ngIf="!loginService.isLoggedIn()">
-      <a routerLink="/login" routerLinkActive="active">Login</a>
-    </li>
-  </ul>
+    <button *ngIf="!loginService.isLoggedIn()" routerLink="/login" routerLinkActive="active">
+      Login
+    </button>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
-<li *ngIf="loginService.isLoggedIn()">
-<app-footer></app-footer>
-</li>
 
+<div *ngIf="loginService.isLoggedIn()">
+  <app-footer></app-footer>
+</div>
