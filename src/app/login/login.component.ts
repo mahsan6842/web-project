@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';  // Import Router to navigate
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-login',
@@ -27,19 +27,25 @@ export class LoginComponent {
       return;
     }
 
-    // Call the login service
-    this.loginService.login(this.username, this.password).subscribe({
-      next: (response) => {
-        // If login is successful, authenticate the user
-        this.loginService.authenticate();
-        alert('Login successful!');
-        this.router.navigate(['/dashboard']);
-      },
-      error: (err) => {
-        console.error('Error during login:', err);
+      this.loginService.getAccounts().subscribe(
+        (accounts) => {
+          const user = accounts.find(
+            (account) => account.username === this.username && account.password === this.password
+          );
 
-        alert('Invalid credentials or something went wrong!');
-      }
-    });
+          if (user) {
+
+            alert('Congratulations! You have logged in successfully!');
+            this.loginService.loggin();
+            this.router.navigate(['/']);
+          } else {
+            alert('Invalid email or password!');
+          }
+        },
+        (error) => {
+
+        }
+      );
+
   }
 }
