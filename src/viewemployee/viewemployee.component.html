@@ -1,0 +1,27 @@
+<section id="viewEmployees">
+  <h2>View All Employees</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.position }}</td>
+      <td>
+        <a [routerLink]="['/editemployee',employee.id]">Edit</a>
+        <button (click)="deleteEmployee(employee.id)" class="delete-button">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
