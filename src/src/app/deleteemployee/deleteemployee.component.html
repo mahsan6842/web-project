@@ -1,12 +1,8 @@
-<p>deleteemployee works!</p>
-
-
 <section id="deleteEmployee">
   <h2>Delete Employee</h2>
-  <form>
+  <form (ngSubmit)="onsubmit($event)">
     <label for="deleteEmployeeId">Employee ID:</label>
-    <input type="text" placeholder="Enter Employee ID" id="deleteEmployeeId" name="deleteEmployeeId" required>
-
+    <input [(ngModel)]="id" type="text" placeholder="Enter Employee ID" id="deleteEmployeeId" name="id" required>
     <button type="submit">Delete</button>
   </form>
 </section>
